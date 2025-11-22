@@ -101,6 +101,24 @@
         <li class="menu-item">
             <a href="#" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
+                <div data-i18n="Authentications">Katalog Category</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="{{ route('category.create')}}" class="menu-link">
+                        <div data-i18n="Basic">Tambah Data</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="{{ route('category.index')}}" class="menu-link">
+                        <div data-i18n="Basic">Daftar Category</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="#" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
                 <div data-i18n="Authentications">Katalog Produk</div>
             </a>
             <ul class="menu-sub">
@@ -114,8 +132,8 @@
                         <div data-i18n="Basic">Daftar Produk</div>
                     </a>
                 </li>
-                <li class="menu-header small text-uppercase"><span class="menu-header-
-text">Transaksi</span></li>
+
+                <li class="menu-header small text-uppercase"><span class="menu-header-text">Transaksi</span></li>
                 <!-- Cards -->
                 <li class="menu-item">
                     <a href="cards-basic.html" class="menu-link">
