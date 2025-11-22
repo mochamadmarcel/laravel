@@ -26,8 +26,8 @@ Route::get('/dashboard', function () {
 
 // customer
 Route::get('/', function () {
-    return view('dashboard');
-})->name('dashboard');
+    return view('auth.login');
+})->name('home');
 
 
 

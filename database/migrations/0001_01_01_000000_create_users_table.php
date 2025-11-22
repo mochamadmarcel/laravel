@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name', 100)->nullable();
             $table->string('email', 100)->nullable()->unique('email');
             $table->string('password')->nullable();
-            $table->enum('role', ['admin', 'customer'])->nullable();
+            $table->enum('role', ['admin', 'customer'])->default('admin');
             $table->string('alamat')->nullable();
             $table->string('telepon', 20)->nullable();
             $table->timestamps();
@@ -46,5 +46,8 @@ return new class extends Migration
         Schema::dropIfExists('users');
         Schema::dropIfExists('password_reset_tokens');
         Schema::dropIfExists('sessions');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('role');
+        });
     }
 };

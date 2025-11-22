@@ -13,12 +13,15 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->integer('kategori_id')->nullable()->index('kategori_id');
-            $table->string('nama', 150)->nullable();
-            $table->text('deskripsi')->nullable();
-            $table->decimal('harga', 10)->nullable();
-            $table->integer('stok')->nullable();
-            $table->string('foto')->nullable();
+            $table->string('foto');
+            $table->string('nama');
+            $table->text('deskripsi');
+            $table->decimal('harga', 8, 2);
+            $table->integer('stok')->default(0);
+            // $table->foreign('kategori_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreignId('kategori_id')
+                ->constrained('categories')
+                ->onDelete('cascade'); // Produk ikut terhapus saat kategori dihapus
             $table->timestamps();
         });
     }
