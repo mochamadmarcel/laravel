@@ -17,7 +17,7 @@ class AdminSeeder extends Seeder
             ['email' => 'admin@example.com'],
             [
                 'name' => 'Administrator',
-                'password' => bcrypt('password'),
+                'password' => bcrypt('password123'),
                 'role' => 'admin'
             ]
         );
